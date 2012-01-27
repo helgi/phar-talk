@@ -16,4 +16,4 @@ __HALT_COMPILER();
 EOD;
 $p->setStub($stub);
 
-chmod('project.phar', 0744);
+chmod(__DIR__ . '/project.phar', 0744);
