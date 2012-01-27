@@ -20,14 +20,3 @@ EOD;
 $p->setStub($stub);
 
 chmod('project.phar', 0744);
-
-	#!/usr/bin/env php
-	<?php
-	Phar::interceptFileFuncs();
-	function __autoload ($load) {
-		include "phar://" . __FILE__ . "/$load.php";
-	}
-	include "phar://" . __FILE__ . "/cli.php";
-	__HALT_COMPILER();
-	
-	
