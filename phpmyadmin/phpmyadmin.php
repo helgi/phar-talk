@@ -3,7 +3,7 @@ if (!Phar::canWrite()) {
 	die("Phar is in read-only mode, try php -d phar.readonly=0 phpmyadmin.php\n");
 }
 
-@unlink('phpmyadmin.phar');
+@unlink(__DIR__ . '/phpmyadmin.phar');
 $a = new Phar(__DIR__ . '/phpmyadmin.phar', 0, 'phpmyadmin.phar');
 $a->buildFromDirectory("phpMyAdmin-3.4.9-english");
 $a->startBuffering();
